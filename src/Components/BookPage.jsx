@@ -14,7 +14,7 @@ const BookPage = () => {
         const url="https://dapi.kakao.com/v3/search/book?target=title";
         const config={
             headers: {"Authorization": "KakaoAK a9a4461d19237ef6842553e3146a2c00"},
-            params:{"query": "query", "size":6, "page":{page}}
+            params:{"query": "query", "size":6, "page":page}
         }
         setLoding(true);
         const result= await axios.get(url, config);
@@ -23,7 +23,7 @@ const BookPage = () => {
         setIs_end(result.data.meta.is_end);
         console.log(result);
         setLoding(false);
-        ref_query.current.focus();
+    
     }
 
     useEffect(()=>{
